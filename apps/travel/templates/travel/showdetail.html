@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Travel Plan Details</title>
+    </head>
+
+    <body>
+        <h5 style="text-align: right"><a href="/" style="margin: 20px">Log out</a> | <a href="/travel" style="margin: 20px">Home</a></h5>
+      <div class="container">
+          <table>
+              <tbody>
+                  <thead>
+                      <th><h3>{{traveldetials.destination}}</h3></th>
+                  </thead>
+                  <tr>
+                      <td><b>Planed By:</b>  {{traveldetials.creator.name}}</td>
+                  </tr>
+                  <tr>
+                       <td><b>Description:</b>  {{traveldetials.description}}</td>
+                  </tr>
+                  <tr>
+                       <td><b>Travel Date From:</b>  {{traveldetials.start}}</td>
+                  </tr>
+                  <tr>
+                        <td><b>Travel Date To:</b>  {{traveldetials.end}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+          <br>
+      <div class="container">
+          <h4>Other User's Joining the Trip</h4>
+          {% if otheruser %}
+          <ul>
+          {% for user in otheruser %}
+            <li>
+                {{user.name}}
+            </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+          
+      </div>
+    </body>
+</html>

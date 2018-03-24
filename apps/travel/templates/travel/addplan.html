@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Travel Buddy: Add a Trip</title>
+    
+  </head>
+  <body>
+      {% if traval_errors %}
+      <p>this is inside</p>
+      <ul class="messages">
+      {% for message in traval_errors %}
+      <li style="color:red">{{ message }}</li>
+      {% endfor %}
+      </ul>
+     {% endif %}
+     Hello {{username}}!!
+    <form action="/addnewplan" method="POST">
+      {% csrf_token %}
+      <h3>Add a Trip:</h3>
+      <p>Destination: <input type="text" name="destination" id="destination"></p>
+      <p>Description: <input type="text" name="description" id="description"> </p>
+      <label for="from">Travel Start Date:</label>
+      <input type="date" id="start_date" name="start_date">
+      <label for="to">Travel End Date:</label>
+      <input type="date" id="end_date" name="end_date">
+      <input type="submit" name="submit" value="Add">
+    </form>
+  </body>
+</html>
